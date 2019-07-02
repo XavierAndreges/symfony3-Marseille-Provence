@@ -1,0 +1,125 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Petanques list</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Actif</th>
+                <th>Table</th>
+                <th>Titlefr</th>
+                <th>Titleen</th>
+                <th>Region</th>
+                <th>Department</th>
+                <th>City</th>
+                <th>Type</th>
+                <th>Soustype</th>
+                <th>Macaron</th>
+                <th>Vuemer</th>
+                <th>Eaupotable</th>
+                <th>Eclairage</th>
+                <th>Ouvertnuit</th>
+                <th>Club</th>
+                <th>Mountains</th>
+                <th>Longitude</th>
+                <th>Latitude</th>
+                <th>Longituderouting</th>
+                <th>Latituderouting</th>
+                <th>Smallnodewalk</th>
+                <th>Smallnodecar</th>
+                <th>Fullnodewalk</th>
+                <th>Fullnodecar</th>
+                <th>Costwalk</th>
+                <th>Costcar</th>
+                <th>Closecity</th>
+                <th>Pied</th>
+                <th>Velo</th>
+                <th>Moto</th>
+                <th>Auto</th>
+                <th>Bus</th>
+                <th>Resumefr</th>
+                <th>Link</th>
+                <th>Transportfr</th>
+                <th>Transporten</th>
+                <th>Infosfr</th>
+                <th>Infosen</th>
+                <th>Mail</th>
+                <th>Mainimage</th>
+                <th>Textfr</th>
+                <th>Texten</th>
+                <th>Textes</th>
+                <th>Textger</th>
+                <th>Idrepname</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for petanque in petanques %}
+            <tr>
+                <td><a href="{{ path('petanque_show', { 'idrepname': petanque.idrepname }) }}">{{ petanque.actif }}</a></td>
+                <td>{{ petanque.table }}</td>
+                <td>{{ petanque.titleFr }}</td>
+                <td>{{ petanque.titleEn }}</td>
+                <td>{{ petanque.region }}</td>
+                <td>{{ petanque.department }}</td>
+                <td>{{ petanque.city }}</td>
+                <td>{{ petanque.type }}</td>
+                <td>{{ petanque.soustype }}</td>
+                <td>{{ petanque.macaron }}</td>
+                <td>{{ petanque.vuemer }}</td>
+                <td>{{ petanque.eaupotable }}</td>
+                <td>{{ petanque.eclairage }}</td>
+                <td>{{ petanque.ouvertnuit }}</td>
+                <td>{{ petanque.club }}</td>
+                <td>{{ petanque.mountains }}</td>
+                <td>{{ petanque.longitude }}</td>
+                <td>{{ petanque.latitude }}</td>
+                <td>{{ petanque.longituderouting }}</td>
+                <td>{{ petanque.latituderouting }}</td>
+                <td>{{ petanque.smallnodewalk }}</td>
+                <td>{{ petanque.smallnodecar }}</td>
+                <td>{{ petanque.fullnodewalk }}</td>
+                <td>{{ petanque.fullnodecar }}</td>
+                <td>{{ petanque.costwalk }}</td>
+                <td>{{ petanque.costcar }}</td>
+                <td>{{ petanque.closecity }}</td>
+                <td>{{ petanque.pied }}</td>
+                <td>{{ petanque.velo }}</td>
+                <td>{{ petanque.moto }}</td>
+                <td>{{ petanque.auto }}</td>
+                <td>{{ petanque.bus }}</td>
+                <td>{{ petanque.resumeFr }}</td>
+                <td>{{ petanque.link }}</td>
+                <td>{{ petanque.transportFr }}</td>
+                <td>{{ petanque.transportEn }}</td>
+                <td>{{ petanque.infosFr }}</td>
+                <td>{{ petanque.infosEn }}</td>
+                <td>{{ petanque.mail }}</td>
+                <td>{{ petanque.mainimage }}</td>
+                <td>{{ petanque.textFr }}</td>
+                <td>{{ petanque.textEn }}</td>
+                <td>{{ petanque.textEs }}</td>
+                <td>{{ petanque.textGer }}</td>
+                <td>{{ petanque.idrepname }}</td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('petanque_show', { 'idrepname': petanque.idrepname }) }}">show</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('petanque_edit', { 'idrepname': petanque.idrepname }) }}">edit</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('petanque_new') }}">Create a new petanque</a>
+        </li>
+    </ul>
+{% endblock %}

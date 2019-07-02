@@ -1,0 +1,7 @@
+app:
+    resource: '@AppBundle/Controller/'
+    type: annotation
+
+canyons:
+    type:     rest
+    resource: AppBundle\Controller\API_CanyonsController
