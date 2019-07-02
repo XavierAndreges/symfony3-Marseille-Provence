@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+
+<html>
+
+    <head>
+    
+        <meta name="viewport" content="viewport-fit=cover, width=device-width, initial-scale=1.0, minimum-scale=0.1, maximum-scale=5.0, user-scalable=yes">
+        <meta charset="UTF-8" />
+
+        <title>New BonsPlans</title>
+
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+
+    </head>
+
+    {% block body %}
+        <h1>Create new BonsPlans</h1>
+
+        {{ include('bons_plans/_form.html.twig') }}
+
+        <a href="{{ path('bons_plans_index') }}">back to list</a>
+    {% endblock %}
+
+</html>

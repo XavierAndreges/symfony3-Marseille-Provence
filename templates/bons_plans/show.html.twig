@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+
+<title>BonsPlans</title>
+
+{% block body %}
+    <h1>BonsPlans</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Idrepname</th>
+                <td>{{ bons_plan.idrepname }}</td>
+            </tr>
+            <tr>
+                <th>Actif</th>
+                <td>{{ bons_plan.actif }}</td>
+            </tr>
+            <tr>
+                <th>Table</th>
+                <td>{{ bons_plan.table }}</td>
+            </tr>
+            <tr>
+                <th>TitleFr</th>
+                <td>{{ bons_plan.titleFr }}</td>
+            </tr>
+            <tr>
+                <th>TitleEn</th>
+                <td>{{ bons_plan.titleEn }}</td>
+            </tr>
+            <tr>
+                <th>Shorttitle</th>
+                <td>{{ bons_plan.shorttitle }}</td>
+            </tr>
+            <tr>
+                <th>Region</th>
+                <td>{{ bons_plan.region }}</td>
+            </tr>
+            <tr>
+                <th>Department</th>
+                <td>{{ bons_plan.department }}</td>
+            </tr>
+            <tr>
+                <th>City</th>
+                <td>{{ bons_plan.city }}</td>
+            </tr>
+            <tr>
+                <th>Type</th>
+                <td>{{ bons_plan.type }}</td>
+            </tr>
+            <tr>
+                <th>Soustype</th>
+                <td>{{ bons_plan.soustype }}</td>
+            </tr>
+            <tr>
+                <th>Macaron</th>
+                <td>{{ bons_plan.macaron }}</td>
+            </tr>
+            <tr>
+                <th>Promo_fr</th>
+                <td>{{ bons_plan.promoFr }}</td>
+            </tr>
+            <tr>
+                <th>Promo_en</th>
+                <td>{{ bons_plan.promoEn }}</td>
+            </tr>
+            <tr>
+                <th>Mountains</th>
+                <td>{{ bons_plan.mountains }}</td>
+            </tr>
+            <tr>
+                <th>Longitude</th>
+                <td>{{ bons_plan.longitude }}</td>
+            </tr>
+            <tr>
+                <th>Latitude</th>
+                <td>{{ bons_plan.latitude }}</td>
+            </tr>
+            <tr>
+                <th>Longituderouting</th>
+                <td>{{ bons_plan.longituderouting }}</td>
+            </tr>
+            <tr>
+                <th>Latituderouting</th>
+                <td>{{ bons_plan.latituderouting }}</td>
+            </tr>
+            <tr>
+                <th>Smallnodewalk</th>
+                <td>{{ bons_plan.smallnodewalk }}</td>
+            </tr>
+            <tr>
+                <th>Smallnodecar</th>
+                <td>{{ bons_plan.smallnodecar }}</td>
+            </tr>
+            <tr>
+                <th>Fullnodewalk</th>
+                <td>{{ bons_plan.fullnodewalk }}</td>
+            </tr>
+            <tr>
+                <th>Fullnodecar</th>
+                <td>{{ bons_plan.fullnodecar }}</td>
+            </tr>
+            <tr>
+                <th>Costwalk</th>
+                <td>{{ bons_plan.costwalk }}</td>
+            </tr>
+            <tr>
+                <th>Costcar</th>
+                <td>{{ bons_plan.costcar }}</td>
+            </tr>
+            <tr>
+                <th>Closecity</th>
+                <td>{{ bons_plan.closecity }}</td>
+            </tr>
+            <tr>
+                <th>Pied</th>
+                <td>{{ bons_plan.pied }}</td>
+            </tr>
+            <tr>
+                <th>Velo</th>
+                <td>{{ bons_plan.velo }}</td>
+            </tr>
+            <tr>
+                <th>Moto</th>
+                <td>{{ bons_plan.moto }}</td>
+            </tr>
+            <tr>
+                <th>Auto</th>
+                <td>{{ bons_plan.auto }}</td>
+            </tr>
+            <tr>
+                <th>Bus</th>
+                <td>{{ bons_plan.bus }}</td>
+            </tr>
+            <tr>
+                <th>ResumeFr</th>
+                <td>{{ bons_plan.resumeFr }}</td>
+            </tr>
+            <tr>
+                <th>Link</th>
+                <td>{{ bons_plan.link }}</td>
+            </tr>
+            <tr>
+                <th>TransportFr</th>
+                <td>{{ bons_plan.transportFr }}</td>
+            </tr>
+            <tr>
+                <th>TransportEn</th>
+                <td>{{ bons_plan.transportEn }}</td>
+            </tr>
+            <tr>
+                <th>TransportBonus</th>
+                <td>{{ bons_plan.transportBonus }}</td>
+            </tr>
+            <tr>
+                <th>InfosFr</th>
+                <td>{{ bons_plan.infosFr }}</td>
+            </tr>
+            <tr>
+                <th>InfosEn</th>
+                <td>{{ bons_plan.infosEn }}</td>
+            </tr>
+            <tr>
+                <th>Mail</th>
+                <td>{{ bons_plan.mail }}</td>
+            </tr>
+            <tr>
+                <th>Mainimage</th>
+                <td>{{ bons_plan.mainimage }}</td>
+            </tr>
+            <tr>
+                <th>TextFr</th>
+                <td>{{ bons_plan.textFr }}</td>
+            </tr>
+            <tr>
+                <th>TextEn</th>
+                <td>{{ bons_plan.textEn }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('bons_plans_index') }}">back to list</a>
+
+    <a href="{{ path('bons_plans_edit', {'idrepname': bons_plan.idrepname}) }}">edit</a>
+
+    {{ include('bons_plans/_delete_form.html.twig') }}
+{% endblock %}

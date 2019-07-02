@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+
+<title>BonsPlans index</title>
+
+{% block body %}
+    <h1>BonsPlans index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Idrepname</th>
+                <th>Actif</th>
+                <th>Table</th>
+                <th>TitleFr</th>
+                <th>TitleEn</th>
+                <th>Shorttitle</th>
+                <th>Region</th>
+                <th>Department</th>
+                <th>City</th>
+                <th>Type</th>
+                <th>Soustype</th>
+                <th>Macaron</th>
+                <th>Promo_fr</th>
+                <th>Promo_en</th>
+                <th>Mountains</th>
+                <th>Longitude</th>
+                <th>Latitude</th>
+                <th>Longituderouting</th>
+                <th>Latituderouting</th>
+                <th>Smallnodewalk</th>
+                <th>Smallnodecar</th>
+                <th>Fullnodewalk</th>
+                <th>Fullnodecar</th>
+                <th>Costwalk</th>
+                <th>Costcar</th>
+                <th>Closecity</th>
+                <th>Pied</th>
+                <th>Velo</th>
+                <th>Moto</th>
+                <th>Auto</th>
+                <th>Bus</th>
+                <th>ResumeFr</th>
+                <th>Link</th>
+                <th>TransportFr</th>
+                <th>TransportEn</th>
+                <th>TransportBonus</th>
+                <th>InfosFr</th>
+                <th>InfosEn</th>
+                <th>Mail</th>
+                <th>Mainimage</th>
+                <th>TextFr</th>
+                <th>TextEn</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for bons_plan in bons_plans %}
+            <tr>
+                <td>{{ bons_plan.idrepname }}</td>
+                <td>{{ bons_plan.actif }}</td>
+                <td>{{ bons_plan.table }}</td>
+                <td>{{ bons_plan.titleFr }}</td>
+                <td>{{ bons_plan.titleEn }}</td>
+                <td>{{ bons_plan.shorttitle }}</td>
+                <td>{{ bons_plan.region }}</td>
+                <td>{{ bons_plan.department }}</td>
+                <td>{{ bons_plan.city }}</td>
+                <td>{{ bons_plan.type }}</td>
+                <td>{{ bons_plan.soustype }}</td>
+                <td>{{ bons_plan.macaron }}</td>
+                <td>{{ bons_plan.promoFr }}</td>
+                <td>{{ bons_plan.promoEn }}</td>
+                <td>{{ bons_plan.mountains }}</td>
+                <td>{{ bons_plan.longitude }}</td>
+                <td>{{ bons_plan.latitude }}</td>
+                <td>{{ bons_plan.longituderouting }}</td>
+                <td>{{ bons_plan.latituderouting }}</td>
+                <td>{{ bons_plan.smallnodewalk }}</td>
+                <td>{{ bons_plan.smallnodecar }}</td>
+                <td>{{ bons_plan.fullnodewalk }}</td>
+                <td>{{ bons_plan.fullnodecar }}</td>
+                <td>{{ bons_plan.costwalk }}</td>
+                <td>{{ bons_plan.costcar }}</td>
+                <td>{{ bons_plan.closecity }}</td>
+                <td>{{ bons_plan.pied }}</td>
+                <td>{{ bons_plan.velo }}</td>
+                <td>{{ bons_plan.moto }}</td>
+                <td>{{ bons_plan.auto }}</td>
+                <td>{{ bons_plan.bus }}</td>
+                <td>{{ bons_plan.resumeFr }}</td>
+                <td>{{ bons_plan.link }}</td>
+                <td>{{ bons_plan.transportFr }}</td>
+                <td>{{ bons_plan.transportEn }}</td>
+                <td>{{ bons_plan.transportBonus }}</td>
+                <td>{{ bons_plan.infosFr }}</td>
+                <td>{{ bons_plan.infosEn }}</td>
+                <td>{{ bons_plan.mail }}</td>
+                <td>{{ bons_plan.mainimage }}</td>
+                <td>{{ bons_plan.textFr }}</td>
+                <td>{{ bons_plan.textEn }}</td>
+                <td>
+                    <a href="{{ path('bons_plans_show', {'idrepname': bons_plan.idrepname}) }}">show</a>
+                    <a href="{{ path('bons_plans_edit', {'idrepname': bons_plan.idrepname}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="43">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('bons_plans_new') }}">Create new</a>
+{% endblock %}

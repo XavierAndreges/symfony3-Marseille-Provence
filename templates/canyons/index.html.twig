@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+
+<title>Canyons index</title>
+
+{% block body %}
+    <h1>Canyons index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Bounds</th>
+                <th>Cotationverticale</th>
+                <th>Cotationaquatique</th>
+                <th>Cotationengagement</th>
+                <th>Approchetime</th>
+                <th>Retourtime</th>
+                <th>Descentetime</th>
+                <th>Cascademax</th>
+                <th>Corde</th>
+                <th>Altitudedepart</th>
+                <th>Denivele</th>
+                <th>Longueur</th>
+                <th>Note</th>
+                <th>Qualiteeau</th>
+                <th>Frequentation</th>
+                <th>Traceign</th>
+                <th>Latitudeend</th>
+                <th>Longitudeend</th>
+                <th>Approchegeojson</th>
+                <th>Descentegeojson</th>
+                <th>Retourgeojson</th>
+                <th>Idrepname</th>
+                <th>Actif</th>
+                <th>Table</th>
+                <th>TitleFr</th>
+                <th>TitleEn</th>
+                <th>Shorttitle</th>
+                <th>Region</th>
+                <th>Department</th>
+                <th>City</th>
+                <th>Type</th>
+                <th>Soustype</th>
+                <th>Macaron</th>
+                <th>Promo_fr</th>
+                <th>Promo_en</th>
+                <th>Mountains</th>
+                <th>Longitude</th>
+                <th>Latitude</th>
+                <th>Longituderouting</th>
+                <th>Latituderouting</th>
+                <th>Smallnodewalk</th>
+                <th>Smallnodecar</th>
+                <th>Fullnodewalk</th>
+                <th>Fullnodecar</th>
+                <th>Costwalk</th>
+                <th>Costcar</th>
+                <th>Closecity</th>
+                <th>Pied</th>
+                <th>Velo</th>
+                <th>Moto</th>
+                <th>Auto</th>
+                <th>Bus</th>
+                <th>ResumeFr</th>
+                <th>Link</th>
+                <th>TransportFr</th>
+                <th>TransportEn</th>
+                <th>TransportBonus</th>
+                <th>InfosFr</th>
+                <th>InfosEn</th>
+                <th>Mail</th>
+                <th>Mainimage</th>
+                <th>TextFr</th>
+                <th>TextEn</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for canyon in canyons %}
+            <tr>
+                <td>{{ canyon.bounds }}</td>
+                <td>{{ canyon.cotationverticale }}</td>
+                <td>{{ canyon.cotationaquatique }}</td>
+                <td>{{ canyon.cotationengagement }}</td>
+                <td>{{ canyon.approchetime }}</td>
+                <td>{{ canyon.retourtime }}</td>
+                <td>{{ canyon.descentetime }}</td>
+                <td>{{ canyon.cascademax }}</td>
+                <td>{{ canyon.corde }}</td>
+                <td>{{ canyon.altitudedepart }}</td>
+                <td>{{ canyon.denivele }}</td>
+                <td>{{ canyon.longueur }}</td>
+                <td>{{ canyon.note }}</td>
+                <td>{{ canyon.qualiteeau }}</td>
+                <td>{{ canyon.frequentation }}</td>
+                <td>{{ canyon.traceign }}</td>
+                <td>{{ canyon.latitudeend }}</td>
+                <td>{{ canyon.longitudeend }}</td>
+                <td>{{ canyon.approchegeojson }}</td>
+                <td>{{ canyon.descentegeojson }}</td>
+                <td>{{ canyon.retourgeojson }}</td>
+                <td>{{ canyon.idrepname }}</td>
+                <td>{{ canyon.actif }}</td>
+                <td>{{ canyon.table }}</td>
+                <td>{{ canyon.titleFr }}</td>
+                <td>{{ canyon.titleEn }}</td>
+                <td>{{ canyon.shorttitle }}</td>
+                <td>{{ canyon.region }}</td>
+                <td>{{ canyon.department }}</td>
+                <td>{{ canyon.city }}</td>
+                <td>{{ canyon.type }}</td>
+                <td>{{ canyon.soustype }}</td>
+                <td>{{ canyon.macaron }}</td>
+                <td>{{ canyon.promoFr }}</td>
+                <td>{{ canyon.promoEn }}</td>
+                <td>{{ canyon.mountains }}</td>
+                <td>{{ canyon.longitude }}</td>
+                <td>{{ canyon.latitude }}</td>
+                <td>{{ canyon.longituderouting }}</td>
+                <td>{{ canyon.latituderouting }}</td>
+                <td>{{ canyon.smallnodewalk }}</td>
+                <td>{{ canyon.smallnodecar }}</td>
+                <td>{{ canyon.fullnodewalk }}</td>
+                <td>{{ canyon.fullnodecar }}</td>
+                <td>{{ canyon.costwalk }}</td>
+                <td>{{ canyon.costcar }}</td>
+                <td>{{ canyon.closecity }}</td>
+                <td>{{ canyon.pied }}</td>
+                <td>{{ canyon.velo }}</td>
+                <td>{{ canyon.moto }}</td>
+                <td>{{ canyon.auto }}</td>
+                <td>{{ canyon.bus }}</td>
+                <td>{{ canyon.resumeFr }}</td>
+                <td>{{ canyon.link }}</td>
+                <td>{{ canyon.transportFr }}</td>
+                <td>{{ canyon.transportEn }}</td>
+                <td>{{ canyon.transportBonus }}</td>
+                <td>{{ canyon.infosFr }}</td>
+                <td>{{ canyon.infosEn }}</td>
+                <td>{{ canyon.mail }}</td>
+                <td>{{ canyon.mainimage }}</td>
+                <td>{{ canyon.textFr }}</td>
+                <td>{{ canyon.textEn }}</td>
+                <td>
+                    <a href="{{ path('canyons_show', {'idrepname': canyon.idrepname}) }}">show</a>
+                    <a href="{{ path('canyons_edit', {'idrepname': canyon.idrepname}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="64">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('canyons_new') }}">Create new</a>
+{% endblock %}
