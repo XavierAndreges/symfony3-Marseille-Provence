@@ -1,0 +1,61 @@
+C:\wamp64\www\symfony3MP
+http://localhost:8080/symfony3MP/web/app_dev.php
+
+php bin/console generate:bundle
+
+php bin/console doctrine:generate:entity   ->  MpBundle:Test
+
+php bin/console doctrine:schema:update --dump-sql
+php bin/console doctrine:schema:update --force
+
+php bin/console doctrine:schema:create
+php bin/console doctrine:schema:drop --force
+
+php bin/console make:entity
+php bin/console make:crud
+php bin/console make:entity --regenerate App
+php bin/console make:migration
+
+php bin/console generate:doctrine:crud --entity=AppBundle:Petanque
+php bin/console generate:doctrine:form AppBundle:Petanque
+
+php bin/console doctrine:generate:entities DocBundle
+
+php bin/console cache:clear
+php bin/console cache:clear --env=prod
+
+php bin/console doctrine:cache:clear-metadata
+php bin/console doctrine:cache:clear-query
+php bin/console doctrine:cache:clear-result
+
+php composer.phar install
+
+php bin/console doctrine:mapping:import --force AppBundle xml --filter="changeworld"
+php bin/console doctrine:mapping:convert annotation ./src
+php bin/console make:entity --regenerate App
+
+
+
+json_decode($request->getContent(), true)
+
+public function __construct($environment, $debug)
+    {
+        date_default_timezone_set( 'Europe/Paris' );
+        ini_set('memory_limit', '256M');
+        parent::__construct($environment, $debug);
+    }
+
+https://zestedesavoir.com/tutoriels/1280/creez-une-api-rest-avec-symfony-3/developpement-de-lapi-rest/fosrestbundle-et-symfony-a-la-rescousse/#1-installation-de-fosrestbundle
+https://api-platform.com/
+
+https://github.com/symfony/symfony/blob/3.4/src/Symfony/Component/HttpFoundation/Response.php
+
+https://www.tensorflow.org/
+https://www.tensorflow.org/tutorials
+
+https://material.angular.io/guide/getting-started
+
+Conf : DevoXX / Dot JS / Dev fest
+
+
+
