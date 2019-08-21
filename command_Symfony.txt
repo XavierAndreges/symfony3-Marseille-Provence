@@ -29,6 +29,7 @@ php bin/console doctrine:cache:clear-query
 php bin/console doctrine:cache:clear-result
 
 php composer.phar install
+php composer.phar update
 
 php bin/console doctrine:mapping:import --force AppBundle xml --filter="changeworld"
 php bin/console doctrine:mapping:convert annotation ./src
